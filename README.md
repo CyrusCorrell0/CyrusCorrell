@@ -1,2 +1,0 @@
-# CyrusCorrell
-Personal Website
