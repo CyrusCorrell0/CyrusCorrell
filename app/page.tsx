@@ -113,7 +113,7 @@ export default function Home() {
       <section id="hero" className="flex flex-col items-start justify-center min-h-screen pt-20 pb-16 text-left bg-gradient-to-b from-blue-50/60 dark:from-blue-950/40 to-transparent max-w-4xl mx-auto px-6">
         <div className="mb-8">
           <h1 className="text-5xl sm:text-7xl font-extrabold mb-8">
-            Hi, I'm{" "}
+            Hi, I&apos;m{" "}
             <span className="bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 text-transparent bg-clip-text">
               Cyrus Correll
             </span>
@@ -153,9 +153,11 @@ export default function Home() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="aspect-video rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 mb-4 overflow-hidden">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=240&fit=crop" 
                 alt="LLM Pipeline for QA - Overture Maps" 
+                width={400}
+                height={240}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -175,9 +177,11 @@ export default function Home() {
 
           <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="aspect-video rounded-lg bg-gradient-to-br from-green-500 to-blue-600 mb-4 overflow-hidden">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=240&fit=crop" 
                 alt="Locational Confidence Metric - Overture Maps" 
+                width={400}
+                height={240}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -197,9 +201,11 @@ export default function Home() {
 
           <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="aspect-video rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 mb-4 overflow-hidden">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&h=240&fit=crop" 
                 alt="Capital Access Institute" 
+                width={400}
+                height={240}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -219,9 +225,11 @@ export default function Home() {
 
           <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="aspect-video rounded-lg bg-gradient-to-br from-orange-500 to-red-600 mb-4 overflow-hidden">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=240&fit=crop" 
                 alt="GetVirtual Employee Dashboard" 
+                width={400}
+                height={240}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -241,9 +249,11 @@ export default function Home() {
 
           <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="aspect-video rounded-lg bg-gradient-to-br from-teal-500 to-green-600 mb-4 overflow-hidden">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=240&fit=crop" 
                 alt="Lead List Generator" 
+                width={400}
+                height={240}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -263,9 +273,11 @@ export default function Home() {
 
           <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="aspect-video rounded-lg bg-gradient-to-br from-pink-500 to-purple-600 mb-4 overflow-hidden">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=240&fit=crop" 
                 alt="Instant Tutor" 
+                width={400}
+                height={240}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
