@@ -104,12 +104,12 @@ export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-10 md:py-20 px-4 w-full  left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        The Ultimate <br /> development studio
+        Projects that <br /> solve real problems
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        We build beautiful products with the latest technologies and frameworks.
-        We are a team of passionate developers and designers that love to build
-        amazing products.
+        From AI-powered quality assurance systems to geospatial analysis tools, 
+        each project tackles meaningful challenges using cutting-edge technology 
+        and data-driven approaches.
       </p>
     </div>
   );
