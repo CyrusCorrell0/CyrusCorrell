@@ -24,72 +24,72 @@ const projects = [
   {
     title: "Marin",
     link: "https://github.com/cyruscorrell",
-    thumbnail: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&h=600&fit=crop",
+    thumbnail: "/marin-logo.png",
   },
   {
     title: "LLM Pipeline for QA - Overture Maps",
     link: "https://poi-quality-assurance.streamlit.app/",
-    thumbnail: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=600&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=600&fit=crop", // AI/ML themed
   },
   {
     title: "Locational Confidence Metric - Overture Maps",
     link: "https://places-locational-confidence-metric.streamlit.app/",
-    thumbnail: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=600&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=600&fit=crop", // Data analysis/charts
   },
   {
     title: "Capital Access Institute",
     link: "https://www.cap8ccess.org/",
-    thumbnail: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=600&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600&h=600&fit=crop", // Finance/business
   },
    {
     title: "GetVirtual Employee Dashboard",
     link: "https://www.getvirtual.org/",
-    thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=600&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=600&fit=crop", // Dashboard/workplace
   },
   {
     title: "Personal Website",
     link: "https://github.com/cyruscorrell/personalwebsite",
-    thumbnail: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=600&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=600&fit=crop", // Web development/coding
   },
   {
     title: "Mario GA algorithm",
     link: "https://github.com/CyrusCorrell/CMPMP5",
-    thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=600&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&h=600&fit=crop", // Gaming/algorithms
   },
   {
     title: "Lead List Generator",
     link: "https://gvleadgenerator.streamlit.app/",
-    thumbnail: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=600&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=600&fit=crop", // Business automation/CRM
   },
   {
     title: "Cold Call Agent",
     link: "https://github.com/CyrusCorrell0/ColdCallAgent",
-    thumbnail: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop", // Communication/phone
   },
   {
     title: "Instant Tutor",
     link: "https://instant-tutor.streamlit.app/",
-    thumbnail: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=600&h=600&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&h=600&fit=crop", // Education/learning
   },
   {
     title: "PDF2Speech",
     link: "https://github.com/CyrusCorrell0/PDFtoSpeech",
-    thumbnail: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=600&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1589998059171-988d887df646?w=600&h=600&fit=crop", // Audio/documents
   },
   {
     title: "CitationBuddy",
     link: "https://github.com/cyruscorrell",
-    thumbnail: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=600&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=600&fit=crop", // Academic/research
   },
    {
     title: "Sierpinski Drawer - HISC 144 Final",
     link: "https://hisc144-final.streamlit.app/",
-    thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=600&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=600&fit=crop", // Mathematics/fractals
   },
    {
     title: "SubwaySurferIt",
     link: "https://github.com/CyrusCorrell0/SubwaySurferIt",
-    thumbnail: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&h=600&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&h=600&fit=crop", // Gaming/mobile
   },
   // {
   //   title: "API Gateway",
