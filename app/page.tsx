@@ -1,23 +1,8 @@
 
 import Image from "next/image";
-import { FloatingNav } from "@/components/ui/floating-navbar";
+import PillNav from "@/components/ui/pill-nav";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import { ContainerTextFlip } from "@/components/ui/text-flip-container";
-
-const navItems = [
-  {
-    name: "Home",
-    link: "#hero",
-  },
-  {
-    name: "Projects",
-    link: "#projects",
-  },
-  {
-    name: "Contact",
-    link: "#contact",
-  },
-];
 
 const projects = [
   {
@@ -105,11 +90,11 @@ const projects = [
 export default function Home() {
   return (
     <div className="bg-background text-foreground min-h-screen font-sans">
-      {/* Floating Navigation */}
-      <FloatingNav navItems={navItems} />
+      {/* Pill Navigation */}
+      <PillNav />
 
       {/* Hero Section */}
-      <section id="hero" className="flex flex-col items-start justify-center min-h-screen pt-20 pb-16 text-left bg-gradient-to-b from-blue-50/60 dark:from-blue-950/40 to-transparent max-w-4xl mx-auto px-6">
+      <section id="hero" className="flex flex-col items-start justify-center min-h-[80vh] pt-20 pb-8 text-left max-w-4xl mx-auto px-6">
         <div className="mb-8">
           <h1 className="text-5xl sm:text-7xl font-extrabold mb-8">
             Hi, I&apos;m{" "}
@@ -125,9 +110,7 @@ export default function Home() {
               words={["LLMs", "Machine Learning", "Data Science", "Frontend", "Email"]}
               className="text-xl sm:text-2xl"
             />
-            <p className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300 max-w-2xl">
-              crafting innovative solutions
-            </p>
+            
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 items-start">
@@ -159,6 +142,123 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Experience Section */}
+      <section id="experience" className="max-w-4xl mx-auto py-20 px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+            Experience
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+            Building people-first solutions across startups, research labs, and industry
+          </p>
+        </div>
+        
+        <div className="space-y-8">
+          {/* Marin */}
+          <div className="group border border-gray-200 dark:border-gray-800 rounded-2xl p-8 bg-white dark:bg-gray-900 hover:shadow-xl transition-all duration-300">
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+              <div className="mb-4 md:mb-0">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">Co-Founder</h3>
+                <h4 className="text-xl text-blue-600 dark:text-blue-400 font-semibold mb-2">Marin</h4>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">San Francisco Bay Area</p>
+              </div>
+              <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">
+                Jun 2025 - Present
+              </div>
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Backed by MCHN Ventures. Email Based Virtual Interns for SMEs. Launching 9/25.
+            </p> 
+          </div>
+
+          {/* GetVirtual */}
+          <div className="group border border-gray-200 dark:border-gray-800 rounded-2xl p-8 bg-white dark:bg-gray-900 hover:shadow-xl transition-all duration-300">
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+              <div className="mb-4 md:mb-0">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">Project Manager</h3>
+                <h4 className="text-xl text-blue-600 dark:text-blue-400 font-semibold mb-2">GetVirtual</h4>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">Santa Cruz, California</p>
+              </div>
+              <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">
+                Jun 2025 - Present
+              </div>
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              Project Manager for Paid projects. Organized full process, acquiring leads, cold calling, scheduling diagnostic meetings, writing project proposals, implementing feedback, creating contracts and invoices, and managing client relationships.
+            </p>
+            <div className="mb-4">
+              <p className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">Student Lead • Part-time (Apr 2025 - Present)</p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm">
+                Student Lead for GetVirtual. Hand-selected after successful completion of Innovation & Entrepreneurship Program. Focused in scaling GV through lead generation, backend automation, customer and student feedback.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {/* <span className="px-3 py-1 text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">Google Analytics</span> */}
+              {/* <span className="px-3 py-1 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full">Automation</span> */}
+            </div>
+          </div>
+
+          {/* Biomedical AI Lab */}
+          <div className="group border border-gray-200 dark:border-gray-800 rounded-2xl p-8 bg-white dark:bg-gray-900 hover:shadow-xl transition-all duration-300">
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+              <div className="mb-4 md:mb-0">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">Machine Learning Researcher</h3>
+                <h4 className="text-xl text-blue-600 dark:text-blue-400 font-semibold mb-2">Biomedical AI Lab</h4>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">Baskin Engineering at UCSC • Santa Cruz, California</p>
+              </div>
+              <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">
+                May 2024 - Present
+              </div>
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              Undergraduate research under professor Razvan Marinescu's MD/ML lab. Implementing coarse-grained graph neural networks to minimize force field calculation in molecular dynamics simulation.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {/* <span className="px-3 py-1 text-xs bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">Molecular Dynamics</span> */}
+              {/* <span className="px-3 py-1 text-xs bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full">PyTorch</span> */}
+            </div>
+          </div>
+
+          {/* Overture Maps */}
+          <div className="group border border-gray-200 dark:border-gray-800 rounded-2xl p-8 bg-white dark:bg-gray-900 hover:shadow-xl transition-all duration-300">
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+              <div className="mb-4 md:mb-0">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">Data Science & Machine Learning Intern</h3>
+                <h4 className="text-xl text-blue-600 dark:text-blue-400 font-semibold mb-2">Overture Maps Foundation</h4>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">Santa Cruz, California</p>
+              </div>
+              <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">
+                Mar 2025 - Jun 2025
+              </div>
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              Had the honor to work alongside Overture and its member companies—including TomTom, Meta, Microsoft, & GeoSpark—through the CRWN 102: Corporate Innovation Laboratory under the amazing Professor Sri Rao.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {/* <span className="px-3 py-1 text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">Deep Learning</span> */}
+              {/* <span className="px-3 py-1 text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full">Entrepreneurship</span> */}
+            </div>
+          </div>
+
+          {/* Digital Marketing Internship */}
+          <div className="group border border-gray-200 dark:border-gray-800 rounded-2xl p-8 bg-white dark:bg-gray-900 hover:shadow-xl transition-all duration-300">
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+              <div className="mb-4 md:mb-0">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">Digital Marketing Intern</h3>
+                <h4 className="text-xl text-blue-600 dark:text-blue-400 font-semibold mb-2">Wisdom Properties</h4>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">Solana Beach, California, United States • On-site</p>
+              </div>
+              <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">
+                May 2023 - Sep 2023
+              </div>
+            </div>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Summer internship working under Alexander Wells III of Wisdom Properties. Designed web pages, scripted and directed video advertisements, collaborated with digital marketing team. Filmed drone footage and guided real estate agent through the selling process.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Projects Section with Hero Parallax */}
       <section id="projects">
         <HeroParallax products={projects} />
@@ -169,7 +269,7 @@ export default function Home() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
           <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
-            Here are some of my favorite projects that showcase different aspects of my development skills
+            Here are some of my favorite projects that showcase my skills and experience. 
           </p>
         </div>
         
