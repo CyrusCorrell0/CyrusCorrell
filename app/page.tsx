@@ -211,7 +211,7 @@ export default function Home() {
               </div>
             </div>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              Undergraduate research under professor Razvan Marinescu's MD/ML lab. Implementing coarse-grained graph neural networks to minimize force field calculation in molecular dynamics simulation.
+              Undergraduate research under professor Razvan Marinescu&apos;s MD/ML lab. Implementing coarse-grained graph neural networks to minimize force field calculation in molecular dynamics simulation.
             </p>
             <div className="flex flex-wrap gap-2">
               {/* <span className="px-3 py-1 text-xs bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">Molecular Dynamics</span> */}
