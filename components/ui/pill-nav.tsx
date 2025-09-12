@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
+import DarkModeToggle from "./dark-mode-toggle";
 
 export type PillNavItem = {
   name: string;
@@ -29,6 +30,7 @@ const PillNav: React.FC<PillNavProps> = ({
   logoAlt = "Logo",
   items = [
     { name: "Home", link: "#hero" },
+    { name: "About", link: "#about" },
     { name: "Experience", link: "#experience" },
     { name: "Projects", link: "#projects" },
     { name: "Contact", link: "#contact" },
@@ -290,7 +292,7 @@ const PillNav: React.FC<PillNavProps> = ({
   return (
     <div className={`sticky z-[1000] w-full flex justify-center transition-all duration-300 ease-in-out ${isVisible ? 'top-[1em]' : '-top-20'}`}>
       <nav
-        className={`w-full md:w-max flex items-center justify-center box-border px-4 md:px-0 ${className}`}
+        className={`w-full md:w-max flex items-center justify-center box-border ${className}`}
         aria-label="Primary"
         style={cssVars}
       >
@@ -348,11 +350,14 @@ const PillNav: React.FC<PillNavProps> = ({
           className={`relative items-center rounded-full hidden md:flex bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 ${logo ? 'ml-2' : ''}`}
           style={{
             height: "var(--nav-h)",
+            minWidth: "600px", // Make navbar wider to match hero text width
+            paddingLeft: "20px",
+            paddingRight: "20px",
           }}
         >
           <ul
             role="menubar"
-            className="list-none flex items-stretch m-0 p-[3px] h-full"
+            className="list-none flex items-stretch justify-between m-0 p-[3px] h-full w-full"
             style={{ gap: "var(--pill-gap)" }}
           >
             {items.map((item, i) => {
@@ -449,6 +454,11 @@ const PillNav: React.FC<PillNavProps> = ({
             style={{ background: "var(--pill-bg, #fff)" }}
           />
         </button>
+        
+        {/* Dark Mode Toggle */}
+        <div className="ml-3">
+          <DarkModeToggle />
+        </div>
       </nav>
 
       <div
