@@ -1,9 +1,19 @@
 
+"use client";
+
 import Image from "next/image";
 import PillNav from "@/components/ui/pill-nav";
 import { HeroParallax } from "@/components/ui/hero-parallax";
-import { ContainerTextFlip } from "@/components/ui/text-flip-container";
-import { Code, Database, Smartphone, Zap, Cpu, Globe, Rocket, Brain, Settings, Terminal } from "lucide-react";
+import RotatingText from "@/components/RotatingText";
+import dynamic from "next/dynamic";
+import { Rocket, User, Briefcase, Microscope, Laptop } from "lucide-react";
+import { useTheme } from "./contexts/ThemeContext";
+
+// Dynamically import Dither with SSR disabled to prevent window access during build
+const Dither = dynamic(() => import("@/components/Dither"), {
+  ssr: false,
+  loading: () => <div className="w-full h-full bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950" />
+});
 
 const projects = [
   {
@@ -89,48 +99,32 @@ const projects = [
 ];
 
 export default function Home() {
+  const { theme } = useTheme();
+  
   return (
-    <div className="bg-background text-foreground min-h-screen font-sans">
+    <div className={`min-h-screen font-sans transition-colors duration-300 ${
+      theme === 'dark' 
+        ? 'bg-gray-900 text-white' 
+        : 'bg-white text-gray-900'
+    }`}>
       {/* Pill Navigation */}
       <PillNav />
       
-      {/* Floating Decorative Icons - Fixed to viewport edges */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        {/* Left edge icons */}
-        <div className="absolute top-24 left-2 bg-blue-500/20 p-3 rounded-lg backdrop-blur-sm animate-pulse">
-          <Code className="w-6 h-6 text-blue-600" />
-        </div>
-        <div className="absolute top-48 left-4 bg-purple-500/20 p-2 rounded-full backdrop-blur-sm animate-pulse">
-          <Database className="w-5 h-5 text-purple-600" />
-        </div>
-        <div className="absolute top-80 left-1 bg-green-500/20 p-4 rounded-xl backdrop-blur-sm animate-pulse delay-100">
-          <Brain className="w-7 h-7 text-green-600" />
-        </div>
-        <div className="absolute bottom-40 left-3 bg-indigo-500/20 p-2 rounded-lg backdrop-blur-sm animate-pulse delay-200">
-          <Cpu className="w-5 h-5 text-indigo-600" />
-        </div>
-        
-        {/* Right edge icons */}
-        <div className="absolute top-32 right-2 bg-pink-500/20 p-3 rounded-full backdrop-blur-sm animate-pulse delay-300">
-          <Rocket className="w-6 h-6 text-pink-600" />
-        </div>
-        <div className="absolute top-64 right-4 bg-orange-500/20 p-2 rounded-lg backdrop-blur-sm animate-pulse delay-100">
-          <Globe className="w-5 h-5 text-orange-600" />
-        </div>
-        <div className="absolute top-96 right-1 bg-teal-500/20 p-4 rounded-xl backdrop-blur-sm animate-pulse delay-200">
-          <Zap className="w-7 h-7 text-teal-600" />
-        </div>
-        <div className="absolute bottom-32 right-3 bg-red-500/20 p-2 rounded-full backdrop-blur-sm animate-pulse delay-300">
-          <Terminal className="w-5 h-5 text-red-600" />
-        </div>
-        <div className="absolute bottom-64 right-2 bg-cyan-500/20 p-3 rounded-lg backdrop-blur-sm animate-pulse delay-400">
-          <Smartphone className="w-6 h-6 text-cyan-600" />
-        </div>
-        <div className="absolute bottom-96 right-4 bg-yellow-500/20 p-2 rounded-xl backdrop-blur-sm animate-pulse delay-500">
-          <Settings className="w-5 h-5 text-yellow-600" />
-        </div>
+      {/* Dither Background - Covering Hero, About Me, and Experience sections */}
+      <div className="fixed top-0 left-0 w-full pointer-events-none z-0" style={{ height: 'calc(100vh + 60vh)' }}>
+        <Dither
+          waveColor={[0.4, 0.2, 0.8]} // Purple-blue blend (red 0.4, green 0.2, blue 0.8)
+          enableMouseInteraction={false}
+          waveSpeed={0.02}
+          waveFrequency={2}
+          waveAmplitude={0.6}
+          colorNum={6}
+          pixelSize={3}
+        />
+        {/* Semi-transparent overlay to make content more visible */}
+        <div className="absolute inset-0 bg-white/70 dark:bg-gray-900/70"></div>
       </div>
-
+      
       {/* Hero Section */}
       <section id="hero" className="relative flex flex-col items-start justify-center min-h-[80vh] pt-20 pb-8 text-left max-w-4xl mx-auto px-6 z-10">
         <div className="mb-8 relative z-10">
@@ -140,42 +134,107 @@ export default function Home() {
               Cyrus Correll
             </span>,
           </h1>
-          <div className="flex flex-col gap-2">
-            <p className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300">
-              A developer with experience in{" "}
-            </p>
-            <ContainerTextFlip
-              words={["LLMs", "Machine Learning", "Data Science", "Frontend", "Email"]}
-              className="text-xl sm:text-2xl"
-            />
-            
-          </div>
+          <p className="text-xl sm:text-1xl text-gray-700 dark:text-gray-300 inline">
+            Machine Learning | Full Stack | Agentic AI | Biomedical Research | Project Management
+            {/* <RotatingText
+              texts={["A developer with experience in LLMs", "A developer with experience in Machine Learning", "A developer with experience in Data Science", "A developer with experience in Frontend", "A developer with experience in Startups"]}
+              className="inline text-xl sm:text-2xl font-semibold text-blue-600 dark:text-blue-400"
+              rotationInterval={3000}
+              splitBy="characters"
+              auto={true}
+              loop={true}
+            /> */}
+          </p>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4 items-start relative z-10">
-          <a href="#projects" className="inline-block px-8 py-3 rounded-full bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition">
-            View My Work
-          </a>
-          <div className="flex gap-4">
-            <a 
-              href="mailto:cyruscorrell07@gmail.com" 
-              className="p-3 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow"
-              aria-label="Email"
-            >
-              <svg className="w-5 h-5 text-gray-600 dark:text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+        <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] flex flex-col sm:flex-row gap-4 items-center justify-center relative z-10">
+              <a href="#projects" className="inline-block px-8 py-3 rounded-full bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition">
+              View My Work
+              </a>
+              <div className="flex gap-4">
+              <a 
+                href="mailto:cyruscorrell07@gmail.com" 
+                className="p-3 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow"
+                aria-label="Email"
+              >
+                <svg className="w-5 h-5 text-gray-600 dark:text-gray-300" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-              </svg>
-            </a>
-            <a 
-              href="https://linkedin.com/in/cyruscorrell" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow"
-              aria-label="LinkedIn"
-            >
-              <svg className="w-5 h-5 text-gray-600 dark:text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                </svg>
+              </a>
+              <a 
+                href="https://linkedin.com/in/cyruscorrell" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-3 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow"
+                aria-label="LinkedIn"
+              >
+                <svg className="w-5 h-5 text-gray-600 dark:text-gray-300" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </a>
+                </svg>
+              </a>
+              </div>
+            </div>
+      </section>
+
+      {/* About Me Section */}
+      <section id="about" className="relative max-w-6xl mx-auto py-20 px-6 z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Profile Image */}
+          <div className="flex justify-center lg:justify-start">
+            <div className="relative">
+              <Image
+                src="/headshotclose.jpg"
+                alt="Cyrus Correll"
+                width={320}
+                height={384}
+                className="w-80 h-96 rounded-2xl object-cover shadow-2xl border-4 border-white dark:border-gray-800"
+              />
+            </div>
+          </div>
+
+          {/* About Content */}
+          <div className="space-y-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-blue-600 dark:text-blue-400">
+              About Me
+            </h2>
+            
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed flex items-center gap-2">
+              Hello! I&apos;m Cyrus, a Computer Science student at UC Santa Cruz. I build across a variety of domains, boasting experience with Startups, Industry, and Academia.
+              <User className="w-5 h-5 text-blue-500" />
+            </p>
+            
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              My background spans <strong className="text-gray-900 dark:text-white">full-stack development, machine learning, and data science</strong>, with hands-on experience in technologies like <strong className="text-gray-900 dark:text-white">Python, React, Node.js, and DSPy</strong>.
+            </p>
+            
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              Right now, I&apos;m working on the following:
+            </p>
+            
+            <ul className="space-y-4 text-gray-700 dark:text-gray-300">
+              <li className="flex items-start gap-3">
+                <Rocket className="w-5 h-5 text-blue-500 mt-1" />
+                <span>
+                  <strong className="text-gray-900 dark:text-white">Co-founding Marin</strong> - Email-based virtual interns for SMEs, backed by MCHN Ventures
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Microscope className="w-5 h-5 text-purple-500 mt-1" />
+                <span>
+                  <strong className="text-gray-900 dark:text-white">Research in machine learning</strong> across biomedical AI, molecular dynamics, and computational microscopy
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Briefcase className="w-5 h-5 text-pink-500 mt-1" />
+                <span>
+                  <strong className="text-gray-900 dark:text-white">Leading projects at GetVirtual</strong> and collaborating with industry leaders like Meta, Microsoft, and TomTom through Overture Maps
+                </span>
+              </li>
+            </ul>
+            
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed flex items-center gap-2">
+              I&apos;m seeking opportunities where I can apply my technical skills to solve meaningful problems and learn from experienced professionals! If you have any advice, email me! 
+              <Laptop className="w-5 h-5 text-green-500" />
+            </p>
           </div>
         </div>
       </section>
@@ -183,11 +242,11 @@ export default function Home() {
       {/* Experience Section */}
       <section id="experience" className="relative max-w-4xl mx-auto py-20 px-6 z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4 text-blue-600 dark:text-blue-400">
             Experience
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
-            Building people-first solutions across startups, research labs, and industry
+            Building people-first solutions across startups, research labs, and industry.
           </p>
         </div>
         
@@ -313,7 +372,7 @@ export default function Home() {
         
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <div className="aspect-video rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 mb-4 overflow-hidden">
+            <div className="aspect-video rounded-lg bg-blue-600 mb-4 overflow-hidden">
               <Image 
                 src="/Overture-KV-colour-logo.webp" 
                 alt="LLM Pipeline for QA - Overture Maps" 
@@ -337,7 +396,7 @@ export default function Home() {
           </div>
 
           <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <div className="aspect-video rounded-lg bg-gradient-to-br from-green-500 to-blue-600 mb-4 overflow-hidden">
+            <div className="aspect-video rounded-lg bg-green-600 mb-4 overflow-hidden">
               <Image 
                 src="/Overture-KV-colour-logo.webp" 
                 alt="Locational Confidence Metric - Overture Maps" 
@@ -361,7 +420,7 @@ export default function Home() {
           </div>
 
           <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <div className="aspect-video rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 mb-4 overflow-hidden">
+            <div className="aspect-video rounded-lg bg-purple-600 mb-4 overflow-hidden">
               <Image 
                 src="/Screenshot 2025-09-02 153342.png" 
                 alt="Capital Access Institute" 
@@ -385,7 +444,7 @@ export default function Home() {
           </div>
 
           <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <div className="aspect-video rounded-lg bg-gradient-to-br from-orange-500 to-red-600 mb-4 overflow-hidden">
+            <div className="aspect-video rounded-lg bg-orange-600 mb-4 overflow-hidden">
               <Image 
                 src="/gv-logo.png" 
                 alt="GetVirtual Employee Dashboard" 
@@ -409,7 +468,7 @@ export default function Home() {
           </div>
 
           <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <div className="aspect-video rounded-lg bg-gradient-to-br from-teal-500 to-green-600 mb-4 overflow-hidden">
+            <div className="aspect-video rounded-lg bg-teal-600 mb-4 overflow-hidden">
               <Image 
                 src="/streamlit-logo-png_seeklogo-441815.webp" 
                 alt="Lead List Generator" 
@@ -433,7 +492,7 @@ export default function Home() {
           </div>
 
           <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <div className="aspect-video rounded-lg bg-gradient-to-br from-pink-500 to-purple-600 mb-4 overflow-hidden">
+            <div className="aspect-video rounded-lg bg-pink-600 mb-4 overflow-hidden">
               <Image 
                 src="/streamlit-logo-png_seeklogo-441815.webp" 
                 alt="Instant Tutor" 
@@ -520,7 +579,7 @@ export default function Home() {
           />
           <button 
             type="submit" 
-            className="px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+            className="px-8 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
           >
             Send Message
           </button>
