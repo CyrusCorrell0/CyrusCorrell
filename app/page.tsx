@@ -4,7 +4,7 @@
 import Image from "next/image";
 import PillNav from "@/components/ui/pill-nav";
 import { HeroParallax } from "@/components/ui/hero-parallax";
-import RotatingText from "@/components/RotatingText";
+// import RotatingText from "@/components/RotatingText";
 import dynamic from "next/dynamic";
 import { Rocket, User, Briefcase, Microscope, Laptop } from "lucide-react";
 import { useTheme } from "./contexts/ThemeContext";
