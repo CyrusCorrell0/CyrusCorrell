@@ -7,16 +7,12 @@ import { HeroParallax } from "@/components/ui/hero-parallax";
 // import RotatingText from "@/components/RotatingText";
 import dynamic from "next/dynamic";
 import { Rocket, User, Briefcase, Microscope, Laptop } from "lucide-react";
-import { useTheme } from "./contexts/ThemeContext";
+// theme is managed in context; not needed in this page directly
 import { SparklesCore } from "@/components/ui/sparkles";
 import BounceCards from "@/components/BounceCards";
 import InfiniteLogoScroll from "@/components/InfiniteLogoScroll";
 
-// Dynamically import Dither with SSR disabled to prevent window access during build
-const Dither = dynamic(() => import("@/components/Dither"), {
-  ssr: false,
-  loading: () => <div className="w-full h-full bg-gray-100" />
-});
+// Dither component is not used on this page; dynamic import removed to avoid unused var
 
 const projects = [
   {
