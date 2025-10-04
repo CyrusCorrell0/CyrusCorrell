@@ -8,11 +8,14 @@ import { HeroParallax } from "@/components/ui/hero-parallax";
 import dynamic from "next/dynamic";
 import { Rocket, User, Briefcase, Microscope, Laptop } from "lucide-react";
 import { useTheme } from "./contexts/ThemeContext";
+import { SparklesCore } from "@/components/ui/sparkles";
+import BounceCards from "@/components/BounceCards";
+import InfiniteLogoScroll from "@/components/InfiniteLogoScroll";
 
 // Dynamically import Dither with SSR disabled to prevent window access during build
 const Dither = dynamic(() => import("@/components/Dither"), {
   ssr: false,
-  loading: () => <div className="w-full h-full bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950" />
+  loading: () => <div className="w-full h-full bg-gray-100" />
 });
 
 const projects = [
@@ -102,36 +105,31 @@ export default function Home() {
   const { theme } = useTheme();
   
   return (
-    <div className={`min-h-screen font-sans transition-colors duration-300 ${
-      theme === 'dark' 
-        ? 'bg-gray-900 text-white' 
-        : 'bg-white text-gray-900'
-    }`}>
-      {/* Pill Navigation */}
+    <div className="min-h-screen font-sans transition-colors duration-300 bg-black text-white">
       <PillNav />
       
-      {/* Dither Background - Covering Hero, About Me, and Experience sections */}
-      <div className="fixed top-0 left-0 w-full pointer-events-none z-0" style={{ height: 'calc(100vh + 60vh)' }}>
-        <Dither
-          waveColor={[0.4, 0.2, 0.8]} // Purple-blue blend (red 0.4, green 0.2, blue 0.8)
-          enableMouseInteraction={false}
-          waveSpeed={0.02}
-          waveFrequency={2}
-          waveAmplitude={0.6}
-          colorNum={6}
-          pixelSize={3}
-        />
-        {/* Semi-transparent overlay to make content more visible */}
-        <div className="absolute inset-0 bg-white/70 dark:bg-gray-900/70"></div>
-      </div>
-      
-      {/* Hero Section */}
-      <section id="hero" className="relative flex flex-col items-start justify-center min-h-[80vh] pt-20 pb-8 text-left max-w-4xl mx-auto px-6 z-10">
+      {/* Hero Section */
+      <section id="hero" className="relative flex flex-col items-start justify-center min-h-[75vh] pt-16 pb-4 text-left max-w-4xl mx-auto px-6 z-10">
+        {/* Business Callout removed per request */}
+        
         <div className="mb-8 relative z-10">
           <h1 className="text-5xl sm:text-7xl font-extrabold mb-8">
             Hey! I&apos;m{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 text-transparent bg-clip-text">
-              Cyrus Correll
+            <span className="relative inline-block">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+                Cyrus Correll
+              </span>
+              <div className="absolute inset-0 w-full h-full">
+                <SparklesCore
+                  id="name-sparkles"
+                  background="transparent"
+                  minSize={0.6}
+                  maxSize={1.4}
+                  particleDensity={50}
+                  className="w-full h-full"
+                  particleColor="#3B82F6"
+                />
+              </div>
             </span>,
           </h1>
           <p className="text-xl sm:text-1xl text-gray-700 dark:text-gray-300 inline">
@@ -172,23 +170,32 @@ export default function Home() {
                 </svg>
               </a>
               </div>
-            </div>
+        </div>
       </section>
+
+            }{/* Infinite Logo Scroll */}
+      <div className="-mt-8">
+        <InfiniteLogoScroll />
+      </div>
 
       {/* About Me Section */}
       <section id="about" className="relative max-w-6xl mx-auto py-20 px-6 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Profile Image */}
+          {/* Profile Images - Bounce Cards */}
           <div className="flex justify-center lg:justify-start">
-            <div className="relative">
-              <Image
-                src="/headshotclose.jpg"
-                alt="Cyrus Correll"
-                width={320}
-                height={384}
-                className="w-80 h-96 rounded-2xl object-cover shadow-2xl border-4 border-white dark:border-gray-800"
-              />
-            </div>
+            <BounceCards
+              images={[
+                "/headshotclose.jpg",
+                "/marin-logo.png",
+                "/gv-logo.png",
+                "/Overture-KV-colour-logo.webp",
+                "/headshotclose.jpg"
+              ]}
+              containerWidth={400}
+              containerHeight={400}
+              enableHover={true}
+              className=""
+            />
           </div>
 
           {/* About Content */}
@@ -528,63 +535,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="max-w-2xl mx-auto py-20 px-6 text-center relative z-10">
-        <div className="mb-8">
-          <h2 className="text-4xl md:text-6xl font-bold mb-4">Contact Me</h2>
-          <div className="flex justify-center gap-6 mb-6">
-            <a 
-              href="mailto:cyruscorrell07@gmail.com" 
-              className="p-3 rounded-full bg-blue-100 dark:bg-blue-900 hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors"
-              aria-label="Email"
-            >
-              <svg className="w-6 h-6 text-blue-600 dark:text-blue-300" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-              </svg>
-            </a>
-            <a 
-              href="https://linkedin.com/in/cyruscorrell" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-blue-100 dark:bg-blue-900 hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <svg className="w-6 h-6 text-blue-600 dark:text-blue-300" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <p className="mb-8 text-gray-700 dark:text-gray-300 text-lg">
-          Feel free to reach out for collaborations or just a friendly hello!
-        </p>
-        <form className="flex flex-col gap-6 items-center">
-          <input 
-            type="text" 
-            placeholder="Your Name" 
-            className="w-full max-w-md px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200" 
-            required 
-          />
-          <input 
-            type="email" 
-            placeholder="Your Email" 
-            className="w-full max-w-md px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200" 
-            required 
-          />
-          <textarea 
-            placeholder="Your Message" 
-            className="w-full max-w-md px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200" 
-            rows={5} 
-            required 
-          />
-          <button 
-            type="submit" 
-            className="px-8 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
-          >
-            Send Message
-          </button>
-        </form>
-      </section>
+      {/* Contact section removed */}
 
       {/* Footer */}
       <footer className="text-center py-12 text-gray-500 text-sm border-t border-gray-200 dark:border-gray-800">

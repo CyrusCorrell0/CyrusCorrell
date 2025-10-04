@@ -292,7 +292,7 @@ const PillNav: React.FC<PillNavProps> = ({
   return (
     <div className={`sticky z-[1000] w-full flex justify-center transition-all duration-300 ease-in-out ${isVisible ? 'top-[1em]' : '-top-20'}`}>
       <nav
-        className={`w-full md:w-max flex items-center justify-center box-border ${className}`}
+        className={`w-full flex items-center justify-center box-border px-6 ${className}`}
         aria-label="Primary"
         style={cssVars}
       >
@@ -347,7 +347,7 @@ const PillNav: React.FC<PillNavProps> = ({
 
         <div
           ref={navItemsRef}
-          className={`relative items-center rounded-full hidden md:flex bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 ${logo ? 'ml-2' : ''}`}
+          className={`relative items-center rounded-full hidden md:flex bg-white/10 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 ${logo ? 'ml-2' : ''}`}
           style={{
             height: "var(--nav-h)",
             minWidth: "600px", // Make navbar wider to match hero text width
