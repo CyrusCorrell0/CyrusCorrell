@@ -5,7 +5,7 @@ import Image from "next/image";
 import PillNav from "@/components/ui/pill-nav";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 // import RotatingText from "@/components/RotatingText";
-import dynamic from "next/dynamic";
+// dynamic import removed (not used on this page)
 import { Rocket, User, Briefcase, Microscope, Laptop } from "lucide-react";
 // theme is managed in context; not needed in this page directly
 import { SparklesCore } from "@/components/ui/sparkles";
@@ -98,7 +98,6 @@ const projects = [
 ];
 
 export default function Home() {
-  const { theme } = useTheme();
   
   return (
     <div className="min-h-screen font-sans transition-colors duration-300 bg-black text-white">
