@@ -1,21 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const instrumentSerif = Instrument_Serif({
+  weight: "400",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
 });
 
 export const metadata: Metadata = {
-  title: "Cyrus Correll - Developer Portfolio",
-  description: "Portfolio of Cyrus Correll - A passionate developer crafting beautiful web experiences and scalable solutions",
+  title: "Cyrus Correll",
+  description: "Cyrus Correll - Developer, Researcher, Entrepreneur",
 };
 
 export default function RootLayout({
@@ -24,10 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className="dark">
+      <body className={`${instrumentSerif.variable} font-serif antialiased`}>
         <Providers>
           {children}
         </Providers>
