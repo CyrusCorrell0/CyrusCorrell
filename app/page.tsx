@@ -18,7 +18,7 @@ export default function Home() {
           rel="noopener noreferrer"
           className="px-6 py-3 rounded-full border border-foreground/30 hover:border-foreground transition-colors text-lg md:text-xl italic hover:bg-foreground/5"
         >
-          Run a business? Let's Chat
+          Run a business? Let&apos;s Chat
         </a>
       </section>
     </div>
