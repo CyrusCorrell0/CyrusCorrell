@@ -12,7 +12,7 @@ const philosophyRules = [
     {
         number: 2,
         title: "Be Loving",
-        description: "Everyone deserves respect and furtherance.",
+        description: "Everyone deserves respect and attention.",
     },
     {
         number: 3,
@@ -34,6 +34,11 @@ const philosophyRules = [
         title: "Explore with childlike curiosity",
         description: "The world is a beautiful and peculiar place.",
     },
+    // {
+    //     number: 7,
+    //     title: "Attention is the Currency of Love",
+    //     description: "You very well could be the first person to pay attention to that blade of grass.",
+    // },
 ];
 
 export default function PhilosophyPage() {

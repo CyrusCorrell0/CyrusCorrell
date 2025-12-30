@@ -84,12 +84,12 @@ export default function ProjectsPage() {
             ),
         },
         {
-            title: "Marin",
+            title: "HeyMarin",
             category: "AI",
             content: (
                 <div>
                     <p className="text-foreground/80 text-lg md:text-xl font-normal mb-4">
-                        An advanced AI project focusing on intelligent data processing and interaction.
+                        Co-Founder of HeyMarin, building an email-based virtual intern for small businesses. Backed by MCHN Ventures.
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4">
                         {["AI", "Python", "Machine Learning"].map((tech, idx) => (
@@ -424,18 +424,24 @@ export default function ProjectsPage() {
                     description="A timeline of my projects and research work."
                 >
                     <div className="flex flex-wrap gap-3 mt-8">
-                        {categories.map((category) => (
-                            <button
-                                key={category}
-                                onClick={() => setSelectedCategory(category)}
-                                className={`px-4 py-2 text-sm md:text-base rounded-full border transition-all ${selectedCategory === category
-                                    ? "bg-foreground text-background border-foreground"
-                                    : "border-foreground/30 hover:border-foreground text-foreground/70 hover:text-foreground"
-                                    }`}
-                            >
-                                {category}
-                            </button>
-                        ))}
+                        {categories.map((category) => {
+                            const count = category === "All"
+                                ? data.length
+                                : data.filter(p => p.category === category).length;
+
+                            return (
+                                <button
+                                    key={category}
+                                    onClick={() => setSelectedCategory(category)}
+                                    className={`px-4 py-2 text-sm md:text-base rounded-full border transition-all ${selectedCategory === category
+                                        ? "bg-foreground text-background border-foreground"
+                                        : "border-foreground/30 hover:border-foreground text-foreground/70 hover:text-foreground"
+                                        }`}
+                                >
+                                    {category} <span className="italic ml-1 opacity-60">{count}</span>
+                                </button>
+                            );
+                        })}
                     </div>
                 </Timeline>
             </div>
