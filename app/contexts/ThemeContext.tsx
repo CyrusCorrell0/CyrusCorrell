@@ -36,20 +36,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
   };
 
-  if (!mounted) {
-    // Return a div with dark theme classes while loading
-    return (
-      <div className="dark bg-gray-900 text-white">
-        {children}
-      </div>
-    );
-  }
+
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div className={theme === 'dark' ? 'dark bg-gray-900 text-white' : 'light bg-white text-gray-900'}>
-        {children}
-      </div>
+      {children}
     </ThemeContext.Provider>
   );
 }
@@ -58,7 +49,7 @@ export function useTheme() {
   const context = useContext(ThemeContext);
   if (context === undefined) {
     // Return default values if used outside provider during SSR
-    return { theme: 'dark' as Theme, toggleTheme: () => {} };
+    return { theme: 'dark' as Theme, toggleTheme: () => { } };
   }
   return context;
 }

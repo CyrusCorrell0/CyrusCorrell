@@ -1,34 +1,18 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
 import Link from "next/link";
+import { useTheme } from "@/app/contexts/ThemeContext";
 
 export default function Navigation() {
     const pathname = usePathname();
-    const [isDark, setIsDark] = useState(true);
-
-    useEffect(() => {
-        // Check initial theme
-        const html = document.documentElement;
-        setIsDark(html.classList.contains("dark"));
-    }, []);
-
-    const toggleTheme = () => {
-        const html = document.documentElement;
-        if (isDark) {
-            html.classList.remove("dark");
-            setIsDark(false);
-        } else {
-            html.classList.add("dark");
-            setIsDark(true);
-        }
-    };
+    const { theme, toggleTheme } = useTheme();
+    const isDark = theme === 'dark';
 
     const navLinks = [
         { href: "/", label: "Home" },
-        { href: "/resume", label: "Resume" },
+        { href: "/experience", label: "Experience" },
         { href: "/projects", label: "Projects" },
         { href: "/philosophy", label: "Philosophy" },
     ];
@@ -54,9 +38,9 @@ export default function Navigation() {
                     <Link
                         key={link.href}
                         href={link.href}
-                        className={`text-sm transition-opacity hover:opacity-70 ${pathname === link.href
-                                ? "underline underline-offset-4"
-                                : ""
+                        className={`text-sm transition-opacity hover:opacity-70 ${pathname?.toLowerCase() === link.href.toLowerCase()
+                            ? "underline underline-offset-4"
+                            : ""
                             }`}
                     >
                         {link.label}

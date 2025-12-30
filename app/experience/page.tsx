@@ -41,13 +41,17 @@ const experiences = [
     },
 ];
 
-export default function ResumePage() {
+export default function ExperiencePage() {
     return (
         <div className="min-h-screen bg-background text-foreground">
             <Navigation />
 
             <section className="min-h-screen px-8 py-32 max-w-4xl mx-auto">
-                <h1 className="text-4xl sm:text-5xl mb-16">Experience</h1>
+                <h1 className="text-4xl sm:text-5xl mb-8">Experience</h1>
+
+                <p className="text-lg leading-relaxed max-w-2xl mb-16 opacity-80">
+                    I specialize in <span className="font-bold">AI/LLMs</span>, <span className="font-bold">Machine Learning</span>, and <span className="font-bold">Data Science</span>, applying technical expertise to diverse fields from <span className="font-bold">Biotechnology Research</span> to <span className="font-bold">Small Business Turnarounds</span>. My work combines scalable <span className="font-bold">Web Development</span> with strategic <span className="font-bold">SEO</span> to deliver measurable impact.
+                </p>
 
                 <div className="space-y-16">
                     {experiences.map((exp, index) => (
