@@ -38,7 +38,7 @@ export default function Navigation() {
                     <Link
                         key={link.href}
                         href={link.href}
-                        className={`text-sm transition-opacity hover:opacity-70 ${pathname?.toLowerCase() === link.href.toLowerCase()
+                        className={`text-lg transition-opacity hover:opacity-70 ${pathname?.toLowerCase() === link.href.toLowerCase()
                             ? "underline underline-offset-4"
                             : ""
                             }`}

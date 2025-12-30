@@ -49,7 +49,7 @@ export default function ExperiencePage() {
             <section className="min-h-screen px-8 py-32 max-w-4xl mx-auto">
                 <h1 className="text-4xl sm:text-5xl mb-8">Experience</h1>
 
-                <p className="text-lg leading-relaxed max-w-2xl mb-16 opacity-80">
+                <p className="text-xl leading-relaxed max-w-2xl mb-16 opacity-80">
                     I specialize in <span className="font-bold">AI/LLMs</span>, <span className="font-bold">Machine Learning</span>, and <span className="font-bold">Data Science</span>, applying technical expertise to diverse fields from <span className="font-bold">Biotechnology Research</span> to <span className="font-bold">Small Business Turnarounds</span>. My work combines scalable <span className="font-bold">Web Development</span> with strategic <span className="font-bold">SEO</span> to deliver measurable impact.
                 </p>
 
@@ -58,13 +58,13 @@ export default function ExperiencePage() {
                         <div key={index} className="border-t border-foreground/20 pt-8">
                             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
                                 <div>
-                                    <h3 className="text-2xl font-normal">{exp.role}</h3>
-                                    <p className="text-lg italic opacity-80">{exp.company}</p>
-                                    <p className="text-sm opacity-60">{exp.location}</p>
+                                    <h3 className="text-3xl font-normal">{exp.role}</h3>
+                                    <p className="text-xl italic opacity-80">{exp.company}</p>
+                                    <p className="text-base opacity-60">{exp.location}</p>
                                 </div>
-                                <p className="text-sm opacity-60 mt-2 sm:mt-0">{exp.period}</p>
+                                <p className="text-base opacity-60 mt-2 sm:mt-0">{exp.period}</p>
                             </div>
-                            <p className="opacity-80 leading-relaxed">{exp.description}</p>
+                            <p className="text-lg opacity-80 leading-relaxed">{exp.description}</p>
                         </div>
                     ))}
                 </div>

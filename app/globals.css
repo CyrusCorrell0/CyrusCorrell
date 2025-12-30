@@ -15,7 +15,7 @@ html {
 
 /* Light Mode */
 :root {
-  --background: #E3E3E3;
+  --background: #e9e9e9;
   --foreground: #0F0F0F;
 }
 
@@ -29,7 +29,7 @@ html {
   * {
     @apply border-foreground/10;
   }
-  
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-serif);

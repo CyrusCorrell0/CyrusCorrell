@@ -50,7 +50,7 @@ export default function PhilosophyPage() {
                             <span className="text-3xl font-normal opacity-40">{rule.number}.</span>
                             <div>
                                 <h3 className="text-2xl font-normal mb-2">{rule.title}</h3>
-                                <p className="italic opacity-80">{rule.description}</p>
+                                <p className="text-xl italic opacity-80">{rule.description}</p>
                             </div>
                         </div>
                     ))}
