@@ -1,6 +1,10 @@
-"use client";
-
 import Navigation from "@/components/Navigation";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Philosophy",
+    description: "Rules to live by and my personal story - Cyrus Correll.",
+};
 
 // Philosophy rules
 const philosophyRules = [

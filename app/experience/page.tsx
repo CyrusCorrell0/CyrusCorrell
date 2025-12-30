@@ -1,7 +1,11 @@
-"use client";
-
 import Navigation from "@/components/Navigation";
 import { Github, Linkedin } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Experience",
+    description: "Cyrus Correll's professional experience in AI research, entrepreneurship, and software development.",
+};
 
 // Experience data
 const experiences = [

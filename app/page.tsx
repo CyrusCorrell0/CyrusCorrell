@@ -1,6 +1,10 @@
-"use client";
-
 import Navigation from "@/components/Navigation";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Cyrus Correll - Developer, Researcher, and Entrepreneur focusing on AI tools for small businesses.",
+};
 
 export default function Home() {
   return (

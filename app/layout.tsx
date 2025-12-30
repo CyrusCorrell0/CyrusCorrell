@@ -11,8 +11,32 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Cyrus Correll",
-  description: "Cyrus Correll - Developer, Researcher, Entrepreneur",
+  title: {
+    default: "Cyrus Correll",
+    template: "%s | Cyrus Correll",
+  },
+  description: "Cyrus Correll - Developer, Researcher, and Entrepreneur specializing in AI/LLMs and Small Business solutions.",
+  keywords: ["Cyrus Correll", "AI specialist", "Machine Learning Researcher", "Software Engineer", "Entrepreneur", "Marin Co-founder", "UCSC researcher"],
+  authors: [{ name: "Cyrus Correll" }],
+  creator: "Cyrus Correll",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://cyruscorrell.com",
+    title: "Cyrus Correll",
+    description: "Personal portfolio of Cyrus Correll - AI Researcher & Entrepreneur.",
+    siteName: "Cyrus Correll Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cyrus Correll",
+    description: "AI Researcher & Entrepreneur focusing on SMB tools.",
+    creator: "@CyrusCorrell",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
