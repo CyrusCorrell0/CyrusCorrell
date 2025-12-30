@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import { Timeline } from "@/components/ui/timeline";
 import Image from "next/image";
