@@ -8,9 +8,81 @@ import Image from "next/image";
 export default function ProjectsPage() {
     const [selectedCategory, setSelectedCategory] = useState("All");
 
-    const categories = ["All", "AI", "Web App", "Research", "Tools"];
+    const categories = ["All", "AI", "Web App", "Research", "Tools", "Automations"];
 
     const data = [
+        {
+            title: "MusicalMe",
+            category: "Web App",
+            content: (
+                <div>
+                    <p className="text-foreground/80 text-lg md:text-xl font-normal mb-4">
+                        GetVirtual Client for two projects. Managed team of 3 across 6 month contract. Focused on refreshing landing page, SEO improvements, email automations, and Google verification.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                        {["Web App", "Automations", "SEO"].map((tech, idx) => (
+                            <span key={idx} className="px-2 py-1 bg-foreground/5 rounded-md text-sm text-foreground/70">
+                                {tech}
+                            </span>
+                        ))}
+                    </div>
+                    <div className="grid grid-cols-1 gap-4">
+                        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-foreground/5 border border-foreground/10">
+                            <Image
+                                src="/MusicalMeLogo.webp"
+                                alt="MusicalMe"
+                                fill
+                                className="object-contain p-8"
+                            />
+                        </div>
+                        <a
+                            href="https://www.musicalme.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-base font-medium italic underline underline-offset-4 hover:text-foreground/80 transition-colors"
+                        >
+                            View Project →
+                        </a>
+                    </div>
+                </div>
+            ),
+        },
+        {
+            title: "Natasha Lozanoff",
+            category: "Automations",
+            content: (
+                <div>
+                    <p className="text-foreground/80 text-lg md:text-xl font-normal mb-4">
+                        Improved SEO score by +25% in 3 weeks, built 5 automations to handle day-to-day tasks. Migrated to new CRM.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                        {["SEO", "Automations", "CRM"].map((tech, idx) => (
+                            <span key={idx} className="px-2 py-1 bg-foreground/5 rounded-md text-sm text-foreground/70">
+                                {tech}
+                            </span>
+                        ))}
+                    </div>
+                    <div className="grid grid-cols-1 gap-4">
+                        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-foreground/5 border border-foreground/10">
+                            <Image
+                                src="/NatashaLozanoffLogo.svg"
+                                alt="Natasha Lozanoff"
+                                fill
+                                className="object-contain p-8"
+                            />
+                        </div>
+                        <a
+                            href="https://www.natashalozanoff.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-base font-medium italic underline underline-offset-4 hover:text-foreground/80 transition-colors"
+                        >
+                            View Project →
+                        </a>
+                    </div>
+                </div>
+            ),
+        },
         {
             title: "Marin",
             category: "AI",
@@ -335,6 +407,7 @@ export default function ProjectsPage() {
                 </div>
             ),
         },
+
     ];
 
     const filteredData = selectedCategory === "All"
