@@ -11,7 +11,7 @@ const philosophyRules = [
     },
     {
         number: 2,
-        title: "Be Loving",
+        title: "Nothin' But Love",
         description: "Everyone deserves respect and attention.",
     },
     {
@@ -59,6 +59,23 @@ export default function PhilosophyPage() {
                             </div>
                         </div>
                     ))}
+                </div>
+            </section>
+
+            <section className="px-8 pb-32 max-w-4xl mx-auto">
+                <h1 className="text-3xl sm:text-4xl mb-8">My Story</h1>
+                <div className="space-y-6">
+                    <p className="text-xl leading-relaxed opacity-80">
+                        Born in San Diego, grew up in Guanacaste, Costa Rica (Pura Vida!). After a few years of beaches, jungles, and eating way too much sand, I moved back to Encinitas, CA.         </p>
+                    <p className="text-xl leading-relaxed opacity-80">
+                        Attending UC Santa Cruz, I got my start in Prof. Razvan Marinescu's Biomedical AI Laboratory. I helped generate simulation data for thousands of PDB's (and even made some sweet shirts!). Being interested in entreprenuership, I joined GetVirtual in early 2025 as a Project Manager. Through this I've been able to meet some of my favorite business owners, and further spread my knowledge and skills in a way that helps small businesses and community efforts.
+                    </p>
+                    <p className="text-xl leading-relaxed opacity-80">
+                        After a stellar time in UCSC's first Corporate Innovation Studio, and completing two projects for the Overture Maps Foundation, I was taken under the wing of Sri Rao. Alongside my roomate and other classmates, we began work on HeyMarin with a clear goal: creating AI tools that SMB's can actually use.
+                    </p>
+                    <p className="text-xl leading-relaxed opacity-80">
+                        At the end of the day, I'm a builder at heart. My goal is to learn the cutting edge as quickly as possible, and then share the latest innovations with the world in a way that builds for all.
+                    </p>
                 </div>
             </section>
         </div>

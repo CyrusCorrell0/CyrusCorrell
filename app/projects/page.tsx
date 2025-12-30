@@ -12,7 +12,43 @@ export default function ProjectsPage() {
 
     const data = [
         {
-            title: "MusicalMe",
+            title: "DAWLab",
+            category: "Web App",
+            content: (
+                <div>
+                    <p className="text-foreground/80 text-lg md:text-xl font-normal mb-4">
+                        Git-Style Version Control System (VCS) for music production, fostering collaboration at previously incapable scale while guaranteeing project certainty.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                        {["Web App", "Tools"].map((tech, idx) => (
+                            <span key={idx} className="px-2 py-1 bg-foreground/5 rounded-md text-sm text-foreground/70">
+                                {tech}
+                            </span>
+                        ))}
+                    </div>
+                    <div className="grid grid-cols-1 gap-4">
+                        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-foreground/5 border border-foreground/10">
+                            <Image
+                                src="/DAWLabLogo.webp"
+                                alt="DAWLab"
+                                fill
+                                className="object-contain p-8"
+                            />
+                        </div>
+                        <a
+                            href="https://dawlabweb.netlify.app"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-base font-medium italic underline underline-offset-4 hover:text-foreground/80 transition-colors"
+                        >
+                            View Project →
+                        </a>
+                    </div>
+                </div>
+            ),
+        },
+        {
+            title: "MusicalMe, Inc.",
             category: "Web App",
             content: (
                 <div>
@@ -252,7 +288,7 @@ export default function ProjectsPage() {
                             />
                         </div>
                         <a
-                            href="https://www.getvirtual.org/"
+                            href="https://www.youtube.com/watch?v=pa5xUpsnGNQ"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-base font-medium italic underline underline-offset-4 hover:text-foreground/80 transition-colors"
@@ -423,7 +459,18 @@ export default function ProjectsPage() {
                     title="Projects"
                     description="A timeline of my projects and research work."
                 >
-                    <div className="flex flex-wrap gap-3 mt-8">
+                    <div className="mt-10">
+                        {/* <h3 className="text-2xl font-normal mb-8">Tools I love using</h3> */}
+                        <div className="flex flex-wrap gap-3">
+                            {["Python", "C++", "C", "JavaScript", "TypeScript", "HTML", "React", "Next.js", "DSPy", "n8n", "Playwright", "MCP", "x402", "TailwindCSS", "Git", "Buffer", "Ubersuggest"].map((tool) => (
+                                <span key={tool} className="px-3 py-1.5 bg-foreground/5 rounded-md text-base text-foreground/80 border border-foreground/10">
+                                    {tool}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-3 mt-16 mb-2">
                         {categories.map((category) => {
                             const count = category === "All"
                                 ? data.length

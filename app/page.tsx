@@ -12,14 +12,17 @@ export default function Home() {
         <h1 className="text-6xl sm:text-8xl md:text-9xl font-normal text-center">
           Cyrus Correll
         </h1>
-        <a
-          href="https://app.apollo.io/#/meet/cyrus_correll_6d8"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-6 py-3 rounded-full border border-foreground/30 hover:border-foreground transition-colors text-lg md:text-xl italic hover:bg-foreground/5"
-        >
-          Run a business? Let&apos;s Chat
-        </a>
+        <div className="flex flex-col sm:flex-row items-center gap-6">
+          <h5 className="text-xl font-normal"></h5>
+          <a
+            href="https://app.apollo.io/#/meet/cyrus_correll_6d8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 rounded-full border border-foreground/30 hover:border-foreground transition-colors text-lg md:text-xl italic hover:bg-foreground/5"
+          >
+            Full stack, automations, SEO, and AI tools for small businesses. Let&apos;s Chat!
+          </a>
+        </div>
       </section>
     </div>
   );
