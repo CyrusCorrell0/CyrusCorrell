@@ -7,7 +7,7 @@ const philosophyRules = [
     {
         number: 1,
         title: "See Sunsets Often",
-        description: "The single easiest way to have a good day.",
+        description: "The single easiest way to have a great day.",
     },
     {
         number: 2,
@@ -21,24 +21,24 @@ const philosophyRules = [
     },
     {
         number: 4,
-        title: "Drown in the Deep End",
-        description: "Life takes effort. Spend yours chasing exceptionalism.",
-    },
-    {
-        number: 5,
         title: "Value Sleep & Sobriety",
         description: "The second and third easiest ways to have a good day.",
     },
     {
-        number: 6,
+        number: 5,
         title: "Explore with childlike curiosity",
         description: "The world is a beautiful and peculiar place.",
     },
-    // {
-    //     number: 7,
-    //     title: "Attention is the Currency of Love",
-    //     description: "You very well could be the first person to pay attention to that blade of grass.",
-    // },
+    {
+        number: 6,
+        title: "Learn Daily",
+        description: "Your brain only grows when you learn and when you sleep.",
+    },
+    {
+        number: 7,
+        title: "Stay Stoked",
+        description: "Every day is a gift.",
+    },
 ];
 
 export default function PhilosophyPage() {
@@ -68,13 +68,13 @@ export default function PhilosophyPage() {
                     <p className="text-xl leading-relaxed opacity-80">
                         Born in San Diego, grew up in Guanacaste, Costa Rica (Pura Vida!). After a few years of beaches, jungles, and eating way too much sand, I moved back to Encinitas, CA.         </p>
                     <p className="text-xl leading-relaxed opacity-80">
-                        Attending UC Santa Cruz, I got my start in Prof. Razvan Marinescu's Biomedical AI Laboratory. I helped generate simulation data for thousands of PDB's (and even made some sweet shirts!). Being interested in entreprenuership, I joined GetVirtual in early 2025 as a Project Manager. Through this I've been able to meet some of my favorite business owners, and further spread my knowledge and skills in a way that helps small businesses and community efforts.
+                        Attending UC Santa Cruz, I got my start in Prof. Razvan Marinescu&apos;s Biomedical AI Laboratory. I helped generate simulation data for thousands of PDB&apos;s (and even made some sweet shirts!). Being interested in entreprenuership, I joined GetVirtual in early 2025 as a Project Manager. Through this I&apos;ve been able to meet some of my favorite business owners, and further spread my knowledge and skills in a way that helps small businesses and community efforts.
                     </p>
                     <p className="text-xl leading-relaxed opacity-80">
-                        After a stellar time in UCSC's first Corporate Innovation Studio, and completing two projects for the Overture Maps Foundation, I was taken under the wing of Sri Rao. Alongside my roomate and other classmates, we began work on HeyMarin with a clear goal: creating AI tools that SMB's can actually use.
+                        After a stellar time in UCSC&apos;s first Corporate Innovation Studio cohort, and completing two projects for the Overture Maps Foundation, I was taken under the wing of Sri Rao. Alongside my roomate and other classmates, we began work on HeyMarin with a clear goal: creating AI tools that SMB&apos;s can actually use.
                     </p>
                     <p className="text-xl leading-relaxed opacity-80">
-                        At the end of the day, I'm a builder at heart. My goal is to learn the cutting edge as quickly as possible, and then share the latest innovations with the world in a way that builds for all.
+                        At the end of the day, I&apos;m a builder at heart. My goal is to learn the cutting edge as quickly as possible, and then share the latest innovations with the world in a way that builds for all.
                     </p>
                 </div>
             </section>

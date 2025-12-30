@@ -9,7 +9,14 @@ const experiences = [
         company: "Marin",
         location: "San Francisco Bay Area",
         period: "Jun 2025 - Present",
-        description: "Backed by MCHN Ventures. Email Based Virtual Interns for SMEs. Launching 9/25.",
+        description: "Email Based Virtual Interns for SMBs. Knowledge and Implementation costs are the top reasons businsses aren't adopting AI, Marin solves this by brining Agentic AI Straight to your inbox. Backed by MCHN Ventures.",
+    },
+    {
+        role: "Hacker In Residence",
+        company: "MCHN Ventures",
+        location: "Sebastopol, CA",
+        period: "Summer 2025",
+        description: "Web app, Tooling Systems, and Database Infrastructure for email based-agents, which ultimately became HeyMarin. Worked with exceptional mentors such as Shane Small, co-creator of Exploding Kittens, and Sri Rao.",
     },
     {
         role: "Project Manager",
@@ -50,7 +57,7 @@ export default function ExperiencePage() {
                 <h1 className="text-4xl sm:text-5xl mb-8">Experience</h1>
 
                 <p className="text-xl leading-relaxed max-w-2xl mb-16 opacity-80">
-                    I specialize in <span className="font-bold">AI/LLMs</span>, <span className="font-bold">Machine Learning</span>, and <span className="font-bold">Data Science</span>, applying technical expertise to diverse fields from <span className="font-bold">Biotechnology Research</span> to <span className="font-bold">Small Business Turnarounds</span>. My work combines scalable <span className="font-bold">Web Development</span> with strategic <span className="font-bold">SEO</span> to deliver measurable impact.
+                    I bridge multidisciplinary AI research and Small Businesses, creating bespoke tools and projects that save owners time and money. I attend 3-5 hackathons a month, exposing myself to the cutting edge, giving my clients a taste of the latest tech delivered in a palatable way.
                 </p>
 
                 <div className="space-y-16">
