@@ -1,6 +1,7 @@
 "use client";
 
 import Navigation from "@/components/Navigation";
+import { Github, Linkedin } from "lucide-react";
 
 // Experience data
 const experiences = [
@@ -54,7 +55,29 @@ export default function ExperiencePage() {
             <Navigation />
 
             <section className="min-h-screen px-8 py-32 max-w-4xl mx-auto">
-                <h1 className="text-4xl sm:text-5xl mb-8">Experience</h1>
+                <div className="flex justify-between items-center mb-8">
+                    <h1 className="text-4xl sm:text-5xl">Experience</h1>
+                    <div className="flex gap-4">
+                        <a
+                            href="https://github.com/CyrusCorrell"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="transition-opacity hover:opacity-70"
+                            aria-label="GitHub"
+                        >
+                            <Github className="w-6 h-6" />
+                        </a>
+                        <a
+                            href="https://linkedin.com/in/cyruscorrell"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="transition-opacity hover:opacity-70"
+                            aria-label="LinkedIn"
+                        >
+                            <Linkedin className="w-6 h-6" />
+                        </a>
+                    </div>
+                </div>
 
                 <p className="text-xl leading-relaxed max-w-2xl mb-16 opacity-80">
                     I bridge multidisciplinary AI research and Small Businesses, creating bespoke tools and projects that save owners time and money. I attend 3-5 hackathons a month, exposing myself to the cutting edge, giving my clients a taste of the latest tech delivered in a palatable way.
