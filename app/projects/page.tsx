@@ -264,6 +264,70 @@ export default function ProjectsPage() {
             ),
         },
         {
+            title: "Local RAG using Qwen3",
+            category: "AI",
+            content: (
+                <div>
+                    <p className="text-foreground/80 text-lg md:text-xl font-normal mb-4">
+                        Local RAG system using Ollama and Qwen3. Allows users to store local vector DB on their device and query a local agent.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                        {["AI", "RAG", "Ollama", "Vector DB"].map((tech, idx) => (
+                            <span key={idx} className="px-2 py-1 bg-foreground/5 rounded-md text-sm text-foreground/70">
+                                {tech}
+                            </span>
+                        ))}
+                    </div>
+                    <div className="grid grid-cols-1 gap-4">
+                        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-foreground/5 border border-foreground/10">
+                            <Image
+                                src="/localrag.png"
+                                alt="Local RAG using Qwen3"
+                                fill
+                                className="object-contain p-8"
+                            />
+                        </div>
+                    </div>
+                </div>
+            ),
+        },
+        {
+            title: "OneClickContext",
+            category: "Tools",
+            content: (
+                <div>
+                    <p className="text-foreground/80 text-lg md:text-xl font-normal mb-4">
+                        Allows agents to call a tool that systematically traverses a codebase and drafts a synopsis of packages/functions + their methods. Anecdotaly found to reduce duplicate code.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                        {["Tools", "AI", "Code Analysis"].map((tech, idx) => (
+                            <span key={idx} className="px-2 py-1 bg-foreground/5 rounded-md text-sm text-foreground/70">
+                                {tech}
+                            </span>
+                        ))}
+                    </div>
+                    <div className="grid grid-cols-1 gap-4">
+                        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-foreground/5 border border-foreground/10">
+                            <Image
+                                src="/oneclickcontext.png"
+                                alt="OneClickContext"
+                                fill
+                                className="object-contain p-8"
+                            />
+                        </div>
+                        <a
+                            href="https://cyruscorrell.gumroad.com/l/oneclickcontext"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-base font-medium italic underline underline-offset-4 hover:text-foreground/80 transition-colors"
+                        >
+                            View Project →
+                        </a>
+                    </div>
+                </div>
+            ),
+        },
+        {
             title: "Capital Access Institute",
             category: "Web App",
             content: (

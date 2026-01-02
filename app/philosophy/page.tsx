@@ -65,7 +65,6 @@ export default function PhilosophyPage() {
                     ))}
                 </div>
             </section>
-
             <section className="px-8 pb-32 max-w-4xl mx-auto">
                 <h1 className="text-3xl sm:text-4xl mb-8">My Story</h1>
                 <div className="space-y-6">

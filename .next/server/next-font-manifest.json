@@ -19,6 +19,10 @@
     "[project]/app/projects/page": [
       "static/media/jizHRFtNs2ka5fXjeivQ4LroWlx_6zAjjH7Motmp5g-s.p.9e0bcc2b.woff2",
       "static/media/jizBRFtNs2ka5fXjeivQ4LroWlx_6zUTjnTLgNs-s.p.836846e7.woff2"
+    ],
+    "[project]/app/sunsets/page": [
+      "static/media/jizHRFtNs2ka5fXjeivQ4LroWlx_6zAjjH7Motmp5g-s.p.9e0bcc2b.woff2",
+      "static/media/jizBRFtNs2ka5fXjeivQ4LroWlx_6zUTjnTLgNs-s.p.836846e7.woff2"
     ]
   },
   "appUsingSizeAdjust": true,
