@@ -36,7 +36,7 @@ export default function ProjectsPage() {
                             />
                         </div>
                         <a
-                            href="https://dawlabweb.netlify.app"
+                            href="https://dawlab.online"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-base font-medium italic underline underline-offset-4 hover:text-foreground/80 transition-colors"
@@ -109,6 +109,42 @@ export default function ProjectsPage() {
                         </div>
                         <a
                             href="https://www.natashalozanoff.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-base font-medium italic underline underline-offset-4 hover:text-foreground/80 transition-colors"
+                        >
+                            View Project →
+                        </a>
+                    </div>
+                </div>
+            ),
+        },
+        {
+            title: "Sew Rose",
+            category: "Web App",
+            content: (
+                <div>
+                    <p className="text-foreground/80 text-lg md:text-xl font-normal mb-4">
+                        GetVirtual Client, created automations for day to day tasks and reduced sales cycle touch points. 
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                        {["Web App", "Automations"].map((tech, idx) => (
+                            <span key={idx} className="px-2 py-1 bg-foreground/5 rounded-md text-sm text-foreground/70">
+                                {tech}
+                            </span>
+                        ))}
+                    </div>
+                    <div className="grid grid-cols-1 gap-4">
+                        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-foreground/5 border border-foreground/10">
+                            <Image
+                                src="/SewRose.avif"
+                                alt="Sew Rose"
+                                fill
+                                className="object-contain p-8"
+                            />
+                        </div>
+                        <a
+                            href="https://www.sewrose.com"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-base font-medium italic underline underline-offset-4 hover:text-foreground/80 transition-colors"

@@ -2,3 +2,4 @@ node_modules/
 .next/
 .agent/
 .playwright-mcp/
+.next
