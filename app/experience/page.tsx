@@ -10,6 +10,13 @@ export const metadata: Metadata = {
 // Experience data
 const experiences = [
     {
+        role: "Event Organizer",
+        company: "Entrepreneurship & Startup Incubator, (ESI)",
+        location: "San Fransisco, CA",
+        period: "Oct 2025 - Present",
+        description: "Organizing hackathons at Frontier Tower and AWS Builder Loft, with 100+ hackers and six figure sponsorships from the likes of OpenAI, Google Cloud, NASA, and CrewAI.",
+    },
+    {
         role: "Co-Founder",
         company: "Marin",
         location: "San Francisco Bay Area",
